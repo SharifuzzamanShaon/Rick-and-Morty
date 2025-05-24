@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+
+@font-face {
+  font-family: 'RickAndMorty';
+  src: url('/fonts/RickAndMorty.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TTTravelsBlack';
+  src: url('/fonts/TTTravels-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,3 +42,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.custom-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 75% 100%, 0 101%)
+}
+
+.custom-clip-episode {
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 75% 100%, 0 101%)
+}
+  
