@@ -15,7 +15,6 @@ const ViewAllCast = () => {
   }, []);
   return (
       <div className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white px-4 py-8 ">
-        {/* Header with Logo */}
         <header className="flex flex-col items-center mb-10">
           <Image
             src="/images/Logo.png"
@@ -26,13 +25,11 @@ const ViewAllCast = () => {
           />
         </header>
 
-        {/* Section Heading */}
         <section className="max-w-[1200px] mx-auto">
           <h2 className="text-3xl font-semibold text-cyan-300 mb-8">
             The Cast
           </h2>
 
-          {/* Cast Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-5 gap-6">
             {cast.map((character, idx) => (
               <div
