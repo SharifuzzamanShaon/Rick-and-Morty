@@ -33,13 +33,47 @@ body {
 }
 
 .custom-clip {
-  clip-path: polygon(0 0, 100% 0, 100% 87%, 75% 100%, 0 101%)
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 75% 100%, 0 101%);
 }
 
 .custom-clip-episode {
-  clip-path: polygon(0 0, 100% 0, 100% 87%, 75% 100%, 0 101%)
+  clip-path: polygon(0 0, 100% 0, 100% 68%, 70% 100%, 0 100%)
+
 }
 
-.testFont{
-  font-family: 'TTTravelsBlack';
+.bubble-image {
+  position: absolute;
+  top: 28%;
+  left: 26%;
+}
+
+.portal-image {
+  position: absolute;
+  top: 39%;
+  left: 45%;
+  transform: translateX(-50%);
+}
+
+.portal-gun-image {
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+}
+
+@media (max-width: 640px) {
+  .bubble-image {
+    top: 14%;
+    left: 0%;
+  }
+
+  .portal-image {
+    top: 21%;
+    left: 41%;
+    transform: translateX(-50%);
+  }
+
+  .portal-gun-image {
+    bottom: 10%;
+    right: 5%;
+  }
 }
