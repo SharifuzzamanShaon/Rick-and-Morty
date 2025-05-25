@@ -9,11 +9,19 @@ const CastSlider = () => {
   const router = useRouter();
   const [cast, setCast] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(false);
   const sliderRef = useRef(null);
 
   useEffect(() => {
     fetchCast();
   }, []);
+
+  useEffect(() => {
+    updateArrowVisibility();
+    window.addEventListener("resize", updateArrowVisibility);
+    return () => window.removeEventListener("resize", updateArrowVisibility);
+  }, [cast]);
 
   const fetchCast = async () => {
     setLoading(true);
@@ -26,12 +34,28 @@ const CastSlider = () => {
     const scrollAmount = direction === "left" ? -300 : 300;
     if (sliderRef.current) {
       sliderRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+
+      // Allow time for scroll to settle
+      setTimeout(() => {
+        updateArrowVisibility();
+      }, 300);
+    }
+  };
+
+  const handleScroll = () => {
+    updateArrowVisibility();
+  };
+
+  const updateArrowVisibility = () => {
+    if (sliderRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+      setShowLeftArrow(scrollLeft > 0);
+      setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 1); // -1 for rounding errors
     }
   };
 
   return (
     <div className="relative mt-8 px-6">
-      {/* Header */}
       <div className="flex items-center mb-4">
         <h3 className="text-md lg:text-3xl mb-4">Meet The Cast</h3>
         <button
@@ -42,24 +66,24 @@ const CastSlider = () => {
         </button>
       </div>
 
-      {/* Spinner */}
       {loading ? (
         <div className="flex justify-center items-center h-40">
           <div className="w-10 h-10 border-4 border-green-400 border-t-transparent rounded-full animate-spin"></div>
         </div>
       ) : (
         <>
-          {/* Left Arrow */}
-          <button
-            onClick={() => scroll("left")}
-            className="hidden sm:block absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white text-green-500 p-1 rounded-full"
-          >
-            <MdArrowBackIosNew size={16} className="cursor-pointer" />
-          </button>
+          {showLeftArrow && (
+            <button
+              onClick={() => scroll("left")}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white text-green-500 p-1.5 sm:p-2 rounded-full"
+            >
+              <MdArrowBackIosNew size={16} className="cursor-pointer" />
+            </button>
+          )}
 
-          {/* Scrollable Cast Cards */}
           <div
             ref={sliderRef}
+            onScroll={handleScroll}
             className="flex overflow-x-auto scrollbar-hide space-x-6 snap-x snap-mandatory px-4 pb-4 cursor-grab active:cursor-grabbing"
           >
             {cast?.map((item, index) => (
@@ -68,9 +92,7 @@ const CastSlider = () => {
                 className="relative snap-start flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] bg-[#1e293b] border border-cyan-600 rounded-lg text-white cursor-pointer p-3 sm:p-4 custom-clip overflow-hidden"
                 onClick={() => router.push(`/cast-details/${item.id}`)}
               >
-                {/* Gradient border overlay */}
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-tr from-cyan-400 to-teal-400 opacity-20 pointer-events-none z-0"></div>
-
                 <div className="relative z-10">
                   <Image
                     className="w-full h-[120px] sm:h-[130px] md:h-[140px] lg:h-[150px] object-cover rounded"
@@ -89,13 +111,14 @@ const CastSlider = () => {
             ))}
           </div>
 
-          {/* Right Arrow */}
-          <button
-            onClick={() => scroll("right")}
-            className="hidden sm:block absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white text-green-500 p-1 rounded-full"
-          >
-            <MdArrowForwardIos size={16} className="text-md cursor-pointer" />
-          </button>
+          {showRightArrow && (
+            <button
+              onClick={() => scroll("right")}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white text-green-500 p-1.5 sm:p-2 rounded-full"
+            >
+              <MdArrowForwardIos size={16} className="cursor-pointer" />
+            </button>
+          )}
         </>
       )}
     </div>
