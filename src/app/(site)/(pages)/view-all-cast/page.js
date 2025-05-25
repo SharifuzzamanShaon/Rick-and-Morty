@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from "react";
 import HttpKit from "@/common/helper/fetchApi/fetchApi";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 const ViewAllCast = () => {
+  const router = useRouter();
   const [cast, setCast] = useState([]);
   const fetchAllCast = async () => {
     const data = await HttpKit.fetchAllCast();
@@ -35,7 +37,8 @@ const ViewAllCast = () => {
             {cast.map((character, idx) => (
               <div
                 key={idx}
-                className="relative p-2 pb-2 bg-[#1e293b] border border-cyan-600 rounded-lg text-white overflow-hidden custom-clip"
+                className="relative p-2 pb-2 bg-[#1e293b] border border-cyan-600 rounded-lg text-white cursor-pointer overflow-hidden custom-clip"
+                onClick={() => router.push(`/cast-details/${character.id}`)}
               >
                 <Image
                   src={character.image}
