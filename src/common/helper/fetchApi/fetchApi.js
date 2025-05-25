@@ -27,6 +27,20 @@ fetchAllLocation:async()=>{
     } catch (error) {
         console.log(error);
     }
+},
+fetchCastById:async(id)=>{
+    try {
+        const response =await axios.get(`${BASE_URL}/character/${id}`);
+        const data = await response.data;
+        data.episode = await Promise.all(data.episode.map(async (episodeUrl) => {
+            const episodeResponse = await axios.get(episodeUrl);
+            return episodeResponse.data;
+        }));    
+        return data;
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 }
 export default HttpKit
