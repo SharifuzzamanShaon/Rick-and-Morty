@@ -15,7 +15,7 @@ const Homepage = () => {
     <div className="relative h-[500px]  bg-cover bg-center brightness-110 contrast-125 bg-[url('/images/home-bg.png')]">
       <div className="absolute inset-0 bg-[#1b1d29]/90 z-0" />
       <div className="relative z-10 max-w-[1200px] mx-auto">
-        <section className="w-full lg:h-[400px] h-[300px] sm:my-16 text-white flex flex-col items-center justify-center relative">
+        <section className="w-full lg:h-[400px] h-[300px] pt-8 text-white flex flex-col items-center justify-center relative">
           <header className="lg:min-h-[60px]  flex flex-col items-center lg:mt-10 mt-10">
             <Image
               src="/images/Logo.png"
@@ -26,42 +26,44 @@ const Homepage = () => {
               onClick={() => router.push("/")}
             />
           </header>
+
           <Image
             src="/images/bubble.png"
             alt="Bubble"
             width={96}
             height={96}
-            className="absolute top-[18%] left-[25%] sm:left-[20%] md:left-[15%] lg:left-[10%] sm:top-[20%]"
+            className="bubble-image"
           />
           <Image
             src="/images/portal.png"
             alt="Portal"
             width={96}
             height={96}
-            className="absolute top-[28%] left-[45%] -translate-x-1/2 sm:left-[40%] md:left-[35%] lg:left-[30%] sm:top-[30%]"
+            className="portal-image"
           />
           <Image
             src="/images/portal-gun.png"
             alt="Portal Gun"
             width={96}
             height={96}
-            className="absolute bottom-[15%] right-[10%] sm:right-[5%] md:right-[10%] lg:right-[15%]"
+            className="portal-gun-image"
           />
-          <div className="my-8 ">
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-ttblack text-left sm:text-center leading-tight drop-shadow-lg tracking-wide sm:tracking-wider">
-            <span className="italic text-white mr-4 sm:mr-10 font-ttblack">
-              THE
-            </span>
-            <span className="text-cyan-400 ml-2 sm:ml-10 font-ttblack">
-              RICK &
-            </span>
-            <br />
-            <span className="text-green-400 font-ttblack">MORTY</span>{" "}
-            <span className="italic text-white font-ttblack">WIKI</span>
-          </h2>
-          </div>  
-          {/* Mobile Layout (button below text) */}
-          <div className="flex flex-col gap-4 mt-4 px-4  text-left sm:hidden">
+
+          <div className="my-8 px-4 sm:px-8">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-ttblack text-left sm:text-center leading-snug sm:leading-tight drop-shadow-2xl tracking-wider sm:tracking-widest uppercase">
+              <span className="italic text-white mr-4 sm:mr-10 font-ttblack">
+                THE
+              </span>
+              <span className="text-cyan-400 ml-2 sm:ml-10 font-ttblack">
+                RICK &
+              </span>
+              <br />
+              <span className="text-green-400 font-ttblack">MORTY</span>{" "}
+              <span className="italic text-white font-ttblack">WIKI</span>
+            </h2>
+          </div>
+          {/* Mobile Layout */}
+          <div className="flex flex-col gap-4 mt-4 px-4  text-left sm:hidden mb-16">
             {/* Text Content */}
             <p className="text-sm text-cyan-400 max-w-md font-ttregular text-left sm:text-center md:text-left lg:text-left">
               Brilliant but lazy scientist Rick takes his fretful teenage
@@ -82,7 +84,6 @@ const Homepage = () => {
               </button>
             </div>
           </div>
-
           {/* Desktop / Tablet Layout (button beside text) */}
           <div className="hidden sm:flex flex-row items-center justify-between gap-4 mt-6 px-4 text-left h-full">
             {/* Button */}
@@ -105,14 +106,14 @@ const Homepage = () => {
             </p>
           </div>
         </section>
-        <section className="h-[500px]  bg-right bg-no-repeat contrast-125 bg-[url('/images/Spiral-element.png')] mt-10">
+        <section className="h-[500px]  bg-right bg-no-repeat contrast-125 bg-[url('/images/Spiral-element.png')] mt-16">
           <div className="relative z-10  my-4">
             <CastSlider />
           </div>
-          <div className="relative z-10 mt-10 my-4">
+          <div className="relative z-10 mt-16 my-4">
             <EpisodeSlider />
           </div>
-          <div className="relative z-10 mt-10 my-4">
+          <div className="relative z-10 mt-16 my-4">
             <LocationSlider />
           </div>
         </section>
