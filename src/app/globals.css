@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 
-@font-face {
+/* @font-face {
   src: url('/fonts/tttravels/TT Travels Trial Black.otf') format('truetype');
   font-family: 'TTTravelsBlack';
-}
+} */
 
 
 :root {
