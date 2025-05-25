@@ -40,7 +40,7 @@ export default function RickSanchezCard({ params }) {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-10">
         {/* Left section */}
         <div className="flex flex-col items-center self-center">
-          <h2 className="text-2xl font-semibold text-cyan-400 mb-4">
+          <h2 className="text-2xl font-semibold text-[#06df73] mb-4">
             {cast.name}
           </h2>
           <div className="border border-cyan-400 rounded-md p-5">
@@ -85,7 +85,7 @@ export default function RickSanchezCard({ params }) {
           <div className="bg-gradient-to-r from-[#81f72d] to-[#1fdcd2] p-[1px] rounded-md">
             <div className="bg-[#10162b] p-4 rounded-[10px]">
               <div className="flex items-center gap-2 mb-4">
-                <FaListUl className="text-green-400 text-xl" />
+                <FaListUl className="text-[#06df73] text-xl" />
                 <h3 className="text-md font-medium">Episode(s)</h3>
               </div>
               <ul className="list-disc list-inside space-y-1 text-sm overflow-y-auto max-h-40 pr-2">
@@ -108,7 +108,7 @@ function InfoBox({ icon, label, value }) {
     <div className="bg-gradient-to-r from-[#81f72d] to-[#1fdcd2] p-[1px] rounded-md">
       <div className="bg-[#10162b] p-4 rounded-[10px] text-center space-y-1">
         <div className="flex justify-center text-2xl lg:text-3xl">{icon}</div>
-        <h3 className="text-sm lg:text-lg  text-gray-400">{label}</h3>
+        <h3 className="text-sm lg:text-lg  text-[#06df73]">{label}</h3>
         <p className="text-sm lg:text-lg font-medium">{value}</p>
       </div>
     </div>
@@ -122,9 +122,9 @@ function DataCard({ icon, label, value }) {
         <div className="flex justify-between items-center">
           <div>
             {icon}
-            <h3 className="text-md text-gray-400">{label}</h3>
+            <h3 className="text-md text-[#06df73]">{label}</h3>
           </div>
-          <FiExternalLink className="text-white text-md" />
+          <FiExternalLink className="text-[#06df73] text-md" />
         </div>
         <p className="text-md lg:text-lg font-medium mt-1">{value}</p>
       </div>
