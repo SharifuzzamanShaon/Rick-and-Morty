@@ -30,7 +30,7 @@ const CastSlider = () => {
     <div className="relative mt-8 px-6">
       {/* Header */}
       <div className="flex items-center mb-4">
-        <h3 className="text-2xl font-bold mb-4">Meet The Cast</h3>
+        <h3 className="text-2xl font-ttthin mb-4">Meet The Cast</h3>
         <button
           onClick={() => router.push("/view-all-cast")}
           className="ml-auto cursor-pointer border border-green-500 px-3 py-2"
@@ -39,7 +39,7 @@ const CastSlider = () => {
         </button>
       </div>
 
-      {/* Left Arrow (hidden on mobile) */}
+      {/* Left Arrow */}
       <button
         onClick={() => scroll("left")}
         className="hidden sm:block absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white text-green-500 p-2 rounded-full"
@@ -50,28 +50,31 @@ const CastSlider = () => {
       {/* Scrollable Cast Cards */}
       <div
         ref={sliderRef}
-        className="flex overflow-x-auto scrollbar-hide space-x-8 snap-x snap-mandatory px-4 pb-4 cursor-grab active:cursor-grabbing"
+        className="flex overflow-x-auto scrollbar-hide space-x-6 snap-x snap-mandatory px-4 pb-4 cursor-grab active:cursor-grabbing"
       >
         {cast?.map((item, index) => (
           <div
             key={index}
-            className="snap-start flex-shrink-0 w-[200px] bg-[#1e293b] border border-cyan-600 rounded-lg text-white p-4 custom-clip"
+            className="snap-start flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] bg-[#1e293b] border border-cyan-600 rounded-lg text-white cursor-pointer p-3 sm:p-4 custom-clip"
+            onClick={() => router.push(`/cast-details/${item.id}`)}
           >
             <Image
-              className="w-full h-[150px] object-cover"
+              className="w-full h-[120px] sm:h-[130px] md:h-[140px] lg:h-[150px] object-cover rounded"
               width={150}
               height={150}
               src={item.image}
               alt={item.name}
             />
-            <div className="pt-4 px-4">
-              <h2 className="text-lg font-semibold">{item.name}</h2>
+            <div className="pt-3 px-2 sm:px-4">
+              <h2 className="text-sm sm:text-base font-ttregular truncate">
+                {item.name}
+              </h2>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Right Arrow (hidden on mobile) */}
+      {/* Right Arrow */}
       <button
         onClick={() => scroll("right")}
         className="hidden sm:block absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white text-green-500 p-2 rounded-full"

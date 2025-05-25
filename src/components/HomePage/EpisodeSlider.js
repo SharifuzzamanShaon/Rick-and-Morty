@@ -30,34 +30,41 @@ const EpisodeSlider = () => {
   };
   return (
     <div className="relative z-10 mt-10">
+      {/* Left Arrow */}
       <button
         onClick={() => scroll("left")}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white hover:bg-white text-green-500 p-2 rounded-full"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white hover:bg-white text-green-500 p-1.5 sm:p-2 rounded-full"
       >
-        <MdArrowBackIosNew size={24} />
+        <MdArrowBackIosNew size={18} />
       </button>
+
+      {/* Right Arrow */}
       <button
         onClick={() => scroll("right")}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white hover:bg-white text-green-500 p-2 rounded-full"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white hover:bg-white text-green-500 p-1.5 sm:p-2 rounded-full"
       >
-        <MdArrowForwardIos size={24} />
+        <MdArrowForwardIos size={18} />
       </button>
+
+      {/* Scrollable Episode Cards */}
       <div
         ref={sliderRef}
-        className="flex overflow-x-hidden scrollbar-hide space-x-4 snap-x snap-mandatory px-4 pb-4"
+        className="flex overflow-x-auto scrollbar-hide space-x-4 snap-x snap-mandatory px-4 pb-4 scroll-smooth touch-pan-x"
       >
         {episode?.map((item, index) => (
           <div
             key={index}
-            className="relative snap-start flex-shrink-0 max-w-xs bg-[#1D1F27] rounded-xl overflow-hidden p-4 text-white custom-clip-episode"
+            className="relative snap-start flex-shrink-0 w-[180px] sm:w-[200px] md:w-[240px] lg:w-[280px] bg-[#1D1F27] rounded-xl overflow-hidden p-3 sm:p-4 text-white custom-clip-episode"
           >
             {/* Gradient border overlay */}
             <div className="absolute inset-0 rounded-xl border-2 border-transparent bg-gradient-to-tr from-blue-400 to-green-400 opacity-20 pointer-events-none"></div>
 
             {/* Content */}
-            <div className="relative z-10 pt-4">
-              <p className="text-sm text-gray-300">{item.episode}</p>
-              <h2 className="text-xl font-semibold">{item.name}</h2>
+            <div className="relative z-10 pt-3 sm:pt-4">
+              <p className="text-xs sm:text-sm text-gray-300">{item.episode}</p>
+              <h2 className="text-sm sm:text-base md:text-lg font-semibold">
+                {item.name}
+              </h2>
             </div>
           </div>
         ))}
