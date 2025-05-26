@@ -57,10 +57,10 @@ const CastSlider = () => {
   return (
     <div className="relative mt-8 px-6">
       <div className="flex items-center mb-4">
-        <h3 className="text-md lg:text-3xl mb-4">Meet The Cast</h3>
+        <h3 className="text-sm lg:text-md mb-4">Meet The Cast</h3>
         <button
           onClick={() => router.push("/view-all-cast")}
-          className="ml-auto cursor-pointer border border-green-500 px-2 py-1 rounded-md"
+          className="ml-auto cursor-pointer border border-green-500 px-3 py-1 rounded-md text-sm "
         >
           View All
         </button>
@@ -89,22 +89,24 @@ const CastSlider = () => {
             {cast?.map((item, index) => (
               <div
                 key={index}
-                className="relative snap-start flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] bg-[#1e293b] border border-cyan-600 rounded-lg text-white cursor-pointer p-3 sm:p-4 custom-clip overflow-hidden"
+                className="relative snap-start flex-shrink-0 w-[140px ] rounded-[8px] sm:w-[160px] md:w-[180px] lg:w-[200px] p-[.2px] bg-gradient-to-tr from-cyan-400 to-teal-400 custom-clip cursor-pointer"
                 onClick={() => router.push(`/cast-details/${item.id}`)}
               >
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-tr from-cyan-400 to-teal-400 opacity-20 pointer-events-none z-0"></div>
-                <div className="relative z-10">
-                  <Image
-                    className="w-full h-[120px] sm:h-[130px] md:h-[140px] lg:h-[150px] object-cover rounded"
-                    width={150}
-                    height={150}
-                    src={item.image}
-                    alt={item.name}
-                  />
-                  <div className="pt-3 px-2 sm:px-4">
-                    <h2 className="text-sm sm:text-base font-ttregular truncate">
-                      {item.name}
-                    </h2>
+                <div className="bg-[#424a5f] text-white custom-clip p-3 sm:p-4 rounded-[8px] overflow-hidden w-full h-full relative">
+                  <div className="absolute inset-0 bg-[#424a5f] opacity-20 pointer-events-none custom-clip z-0 rounded-[8px]"></div>
+                  <div className="relative z-10">
+                    <Image
+                      className="w-full h-[120px] sm:h-[130px] md:h-[140px] lg:h-[150px] object-cover rounded-[8px]"
+                      width={150}
+                      height={150}
+                      src={item.image}
+                      alt={item.name}
+                    />
+                    <div className="pt-3 px-2 sm:px-4">
+                      <h2 className="text-sm sm:text-base lg:text-sm text-left truncate rounded-[8px] p-1">
+                        {item.name}
+                      </h2>
+                    </div>
                   </div>
                 </div>
               </div>
