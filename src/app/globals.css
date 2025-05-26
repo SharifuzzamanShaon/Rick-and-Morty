@@ -33,7 +33,7 @@ body {
 }
 
 .custom-clip {
-  clip-path: polygon(0 0, 100% 0, 100% 87%, 75% 100%, 0 101%);
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 82% 100%, 0 100%);
 }
 
 .custom-clip-episode {
@@ -43,13 +43,13 @@ body {
 
 .bubble-image {
   position: absolute;
-  top: 28%;
-  left: 26%;
+  top: 25%;
+  left: 24%;
 }
 
 .portal-image {
   position: absolute;
-  top: 39%;
+  top: 37%;
   left: 45%;
   transform: translateX(-50%);
 }
@@ -59,6 +59,56 @@ body {
   bottom: 15%;
   right: 10%;
 }
+.accent-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Green blur top-left */
+.accent-background::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #22c55e; /* Tailwind's green-400 */
+  opacity: 0.2;
+  border-radius: 9999px;
+  filter: blur(64px); /* blur-3xl */
+  top: 10%;
+  left: 28%;
+  transform: rotate(12deg);
+}
+/* Green blur top-right*/
+.accent-background::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #00feff;
+  opacity: 0.2;
+  border-radius: 9999px;
+  filter: blur(64px);
+  top: 9%;
+  right: 23%;
+  transform: rotate(12deg);
+}
+/* Cyan blur bottom-right */
+.accent-background-2::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-color: #7aff8f; /* Tailwind's cyan-400 */
+  opacity: 0.30;
+  border-radius: 9999px;
+  filter: blur(40px); /* blur-2xl */
+  bottom: 2%;
+  right: 5%;
+  transform: rotate(45deg);
+}
+
 
 @media (max-width: 640px) {
   .bubble-image {
@@ -96,13 +146,20 @@ body {
 
 .lighting-glow {
   position: absolute;
-  bottom: -1rem;
-  left: 0;
-  width: 8rem;
-  height: 8rem;
-  background: radial-gradient(circle at top right, #18b0ef52, rgb(102 175 255 / 21%), #18b0ef52);
+  bottom: -8%;
+  left: -7%;
+  width: 21rem;
+  height: 14rem;
+  background: radial-gradient(circle at top right, #3c819d00, rgb(102 175 255 / 21%), #18b0ef52);
   filter: blur(40px);
   border-radius: 9999px;
   pointer-events: none;
   z-index: 0;
 }
+.vertical-divider {
+   height: 35%; /* or your desired height */
+    width: 0.6px;
+    background: linear-gradient(to bottom, #81f72d, #1fdcd2);
+    margin: auto 0; /* Vertically centers it */
+}
+  
