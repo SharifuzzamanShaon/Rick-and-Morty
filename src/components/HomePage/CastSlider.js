@@ -55,7 +55,7 @@ const CastSlider = () => {
   };
 
   return (
-    <div className="relative mt-8 px-6">
+    <div className="relative mt-8 px-6 sm:mt-10">
       <div className="flex items-center mb-4">
         <h3 className="text-sm lg:text-md mb-4">Meet The Cast</h3>
         <button
