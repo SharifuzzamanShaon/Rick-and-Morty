@@ -8,12 +8,12 @@ export default function HeroSection() {
   const router = useRouter();
   return (
     <section className="w-full lg:h-[400px] h-[300px] pt-8 text-white flex flex-col items-center justify-center relative">
-    <header className="lg:min-h-[60px]  flex flex-col items-center lg:mt-10 mt-10">
+    <header className="lg:min-h-[60px]  flex flex-col items-center lg:mt-10 mt-10 sm:mt-10">
       <Image
         src="/images/Logo.png"
         alt="Site Logo"
-        width={120}
-        height={100}
+        width={140}
+        height={120}
         className="mx-auto cursor-pointer"
         onClick={() => router.push("/")}
       />
@@ -43,22 +43,24 @@ export default function HeroSection() {
     />
 
     <div className="my-8 px-4 sm:px-8">
-      <h2 className="text-4xl sm:text-5xl md:text-7xl font-ttblack text-left sm:text-center md:text-left lg:text-left leading-snug sm:leading-tight drop-shadow-2xl tracking-wider sm:tracking-widest uppercase">
-        <span className="italic text-white mr-4 sm:mr-10 font-ttblack">
+      <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-left sm:text-center md:text-left lg:text-left leading-snug sm:leading-tight drop-shadow-2xl tracking-wider sm:tracking-widest uppercase">
+        <span className="italic text-white mr-4 sm:mr-10 font-extrabold">
           THE
         </span>
-        <span className="text-cyan-400 ml-2 sm:ml-10 font-ttblack">
+        <span className="text-cyan-400 ml-2 sm:ml-10 font-extrabold">
           RICK &
         </span>
         <br />
-        <span className="text-green-400 font-ttblack">MORTY</span>{" "}
-        <span className="italic text-white font-ttblack">WIKI</span>
+        <span className="text-green-400 font-extrabold">MORTY</span>{" "}
+        <span className="italic text-white font-extrabold">WIKI</span>
       </h2>
     </div>
+    <div className="accent-background"></div>
+    <div className="accent-background-2"></div>
     {/* Mobile Layout */}
     <div className="flex flex-col gap-4 mt-4 px-4  text-left sm:hidden mb-16">
       {/* Text Content */}
-      <p className="text-xs text-cyan-400 max-w-md font-ttregular text-left">
+      <p className="text-xs text-cyan-400 max-w-md font-medium text-left">
         Brilliant but lazy scientist Rick takes his fretful teenage
         grandson, Morty, for wild escapades in other worlds and alternate
         dimensions.
@@ -67,7 +69,7 @@ export default function HeroSection() {
       {/* Button */}
       <div>
         <button
-          className="text-white px-3 py-2 rounded-full flex items-center cursor-pointer gap-2 hover:opacity-90 transition-all duration-200"
+          className="text-white opacity-50 px-3 py-2 rounded-full flex items-center cursor-pointer gap-2 hover:opacity-90 transition-all duration-200"
           style={{
             backgroundImage:
               "linear-gradient(to right, #82f630, rgb(28 219 215 / 77%))",
@@ -82,7 +84,7 @@ export default function HeroSection() {
       {/* Button */}
       <div>
         <button
-          className="text-white px-3 py-2 rounded-full flex items-center cursor-pointer gap-2 hover:opacity-90 transition-all duration-200"
+          className="text-white opacity-80 px-3 py-2 rounded-full flex items-center cursor-pointer gap-2 hover:opacity-90 transition-all duration-200"
           style={{
             backgroundImage:
               "linear-gradient(to right, #82f630, rgb(28, 219, 215))",
@@ -92,7 +94,7 @@ export default function HeroSection() {
         </button>
       </div>
       {/* Text Content */}
-      <p className="text-base md:text-sm text-cyan-400 max-w-sm font-sm text-left sm:text-center md:text-left lg:text-left">
+      <p className="text-base md:text-sm text-cyan-400 max-w-sm font-medium text-left sm:text-center md:text-left lg:text-left">
         Brilliant but lazy scientist Rick takes his fretful teenage
         grandson, Morty, for wild escapades in other worlds and alternate
         dimensions.
