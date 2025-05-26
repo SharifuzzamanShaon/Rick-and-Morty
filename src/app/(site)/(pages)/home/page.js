@@ -13,13 +13,13 @@ const Homepage = () => {
       <div className="relative z-10 max-w-[1200px] mx-auto">
         <HeroSection />
         <section className="h-[500px]  bg-right bg-no-repeat contrast-125 bg-[url('/images/Spiral-element.png')] mt-16">
-          <div className="relative z-10  my-4">
+          <div className="relative z-10  my-4 sm:mt-10">
             <CastSlider />
           </div>
-          <div className="relative z-10 mt-16 my-4">
+          <div className="relative z-10 mt-16 sm:mt-10 my-4">
             <EpisodeSlider />
           </div>
-          <div className="relative z-10 mt-16 my-4">
+          <div className="relative z-10 mt-16 sm:mt-10 my-4">
             <LocationSlider />
           </div>
         </section>
