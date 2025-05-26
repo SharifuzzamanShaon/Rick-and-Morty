@@ -60,7 +60,7 @@ const CastSlider = () => {
         <h3 className="text-sm lg:text-md mb-4">Meet The Cast</h3>
         <button
           onClick={() => router.push("/view-all-cast")}
-          className="ml-auto cursor-pointer border border-green-500 px-3 py-1 rounded-md text-sm "
+          className="ml-auto cursor-pointer border-[#9efe01] border-[.5px] px-3 py-1 rounded-md text-sm "
         >
           View All
         </button>
@@ -68,7 +68,7 @@ const CastSlider = () => {
 
       {loading ? (
         <div className="flex justify-center items-center h-40">
-          <div className="w-10 h-10 border-4 border-green-400 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-10 h-10 border-4 border-[#9efe01] border-t-transparent rounded-full animate-spin"></div>
         </div>
       ) : (
         <>
@@ -96,14 +96,14 @@ const CastSlider = () => {
                   <div className="absolute inset-0 bg-[#424a5f] opacity-20 pointer-events-none custom-clip z-0 rounded-[8px]"></div>
                   <div className="relative z-10">
                     <Image
-                      className="w-full h-[120px] sm:h-[130px] md:h-[140px] lg:h-[150px] object-cover rounded-[8px]"
+                      className="w-full h-[120px] sm:h-[130px] md:h-[140px] lg:h-[150px] opacity-50 object-cover rounded-[8px]"
                       width={150}
                       height={150}
                       src={item.image}
                       alt={item.name}
                     />
-                    <div className="pt-3 px-2 sm:px-4">
-                      <h2 className="text-sm sm:text-base lg:text-sm text-left truncate rounded-[8px] p-1">
+                    <div className="pt-3 px-2 sm:px-4 text-left">
+                      <h2 className="text-sm sm:text-base lg:text-sm text-left rounded-[8px] px-1 py-0.5">
                         {item.name}
                       </h2>
                     </div>
