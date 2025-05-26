@@ -31,7 +31,8 @@ const LocationSlider = () => {
   };
 
   return (
-    <div className="relative z-10 mt-10 max-w-full px-4">
+    <div className="relative z-10 mt-10 max-w-full px-4 pb-6">
+      <h3 className="text-sm lg:text-md mb-4">Location</h3>
       <button
         onClick={() => scroll("left")}
         className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white hover:bg-white text-green-500 p-1.5 sm:p-2 rounded-full"
@@ -52,19 +53,28 @@ const LocationSlider = () => {
         className="flex overflow-x-auto scrollbar-hide space-x-4 snap-x snap-mandatory px-6 pb-4 scroll-smooth touch-pan-x"
       >
         {location?.map((item, index) => (
-          <div
-            key={index}
-            className="relative snap-start flex-shrink-0 w-[180px] sm:w-[200px] md:w-[220px] lg:w-[240px] bg-[#1D1F27] rounded-xl overflow-hidden p-3 text-white custom-clip-episode"
+              <div
+              key={index}
+              className="relative rounded-[8px] snap-start flex-shrink-0 w-[180px] sm:w-[200px] md:w-[220px] lg:w-[240px] p-[.4px] bg-gradient-to-t from-[#7ff633] to-[#1cdbda] custom-clip"
             >
-              <div className="absolute inset-0 rounded-xl border-2 border-transparent bg-gradient-to-tr from-blue-400 to-green-400 opacity-20 pointer-events-none"></div>
+              <div className="bg-[#384053] rounded-[8px] text-white w-full h-full p-1 custom-clip relative overflow-hidden">
+                {/* Optional background overlay */}
+                <div className="absolute inset-0 bg-[#424a5f] opacity-20 pointer-events-none custom-clip"></div>
 
-            <div className="relative z-10 pt-2">
-              <p className="text-xs sm:text-sm text-gray-400 font-light"># {item.id}</p>
-              <h2 className="text-sm sm:text-base md:text-lg font-light">{item.name}</h2>
+                <div className="relative z-10 py-2 pl-2">
+                  <p className="text-[10px] sm:text-xs rounded-[8px] text-gray-400 font-light p-1">
+                    #{item.id}
+                  </p>
+                  <h2 className="text-xs sm:text-sm rounded-[8px] font-light p-1">
+                    {item.name}
+                  </h2>
+                </div>
+              </div>
             </div>
-          </div>
         ))}
       </div>
+        {/* Lighting Shadow */}
+        <div className="lighting-glow"></div>
     </div>
   );
 };
