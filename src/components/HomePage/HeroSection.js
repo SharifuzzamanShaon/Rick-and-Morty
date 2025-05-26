@@ -70,7 +70,7 @@ export default function HeroSection() {
           className="text-white px-3 py-2 rounded-full flex items-center cursor-pointer gap-2 hover:opacity-90 transition-all duration-200"
           style={{
             backgroundImage:
-              "linear-gradient(to right, #82f630, rgb(28, 219, 215))",
+              "linear-gradient(to right, #82f630, rgb(28 219 215 / 77%))",
           }}
         >
           <MdOutlinePlayCircleOutline className="text-md" /> Watch Now
