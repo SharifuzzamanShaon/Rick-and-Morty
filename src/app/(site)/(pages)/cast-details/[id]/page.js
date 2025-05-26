@@ -61,7 +61,7 @@ export default function RickSanchezCard({ params }) {
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+                    <div className="w-10 h-10 border-4 border-[#9efe01] border-t-transparent rounded-full animate-spin"></div>
                   </div>
                 )}
               </div>
