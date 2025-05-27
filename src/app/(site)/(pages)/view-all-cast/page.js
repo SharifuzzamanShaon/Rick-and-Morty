@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import HttpKit from "@/common/helper/fetchApi/fetchApi";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ttTravelsLight } from "@/common/helper/font/font";
+import { ttTravelsBold, ttTravelsLight } from "@/common/helper/font/font";
 const ViewAllCast = () => {
   const router = useRouter();
   const [cast, setCast] = useState([]);
@@ -30,7 +30,7 @@ const ViewAllCast = () => {
           />
         </header>
         <section className="max-w-[1200px] mx-auto">
-          <h2 className={"text-2xl sm text-md font-semibold text-[#16d9e5] mb-8 " + ttTravelsLight.className}>
+          <h2 className={"text-2xl lg:text-3xl sm:text-md font-semibold text-[#16d9e5] mb-8 " + ttTravelsBold.className}>
             The Cast
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-5 gap-6">
