@@ -28,8 +28,8 @@ export default function HeroSection() {
     <Image
       src="/images/portal.png"
       alt="Portal"
-      width={96}
-      height={96}
+      width={100}
+      height={100}
       className="portal-image"
     />
 
@@ -41,12 +41,12 @@ export default function HeroSection() {
       className="portal-gun-image"
     />
 
-    <div className="my-8 px-4 sm:px-8">
-      <h2 className={"text-4xl sm:text-5xl md:text-7xl  text-left sm:text-center md:text-left lg:text-left leading-snug sm:leading-tight drop-shadow-2xl tracking-wider sm:tracking-widest uppercase" + ttTravelsBlack.className}>
-        <span className={"italic text-white mr-10 sm:mr-10 " + ttTravelsBlack.className}>
+    <div className="my-8 sm:mb-4 px-4 sm:px-8">
+      <h2 className={"text-4xl sm:text-2xl md:text-7xl  text-left sm:text-center lg:text-left leading-snug drop-shadow-2xl tracking-wider sm:tracking-widest uppercase" + ttTravelsBlack.className}>
+        <span className={"italic text-white lg:mr-16 sm:mr-5 " + ttTravelsBlack.className}>
           THE
         </span>
-        <span className={"text-cyan-400 ml-16 sm:ml-10 " + ttTravelsBlack.className}>
+        <span className={"text-cyan-400 lg:ml-16 sm:ml-5 " + ttTravelsBlack.className}>
           RICK &
         </span>
         <br />
@@ -59,7 +59,7 @@ export default function HeroSection() {
     {/* Mobile Layout */}
     <div className="flex flex-col gap-4 mt-4 px-4  text-left sm:hidden mb-16">
       {/* Text Content */}
-      <p className={"text-xs text-cyan max-w-md  text-left text-[12px]"+ ttTravelsLight.className}>
+      <p className={" text-cyan-400 max-w-md font-light text-left text-[8px] "+ ttTravelsLight.className}>
         Brilliant but lazy scientist Rick takes his fretful teenage <br></br>
         grandson, Morty, for wild escapades in other worlds and alternate <br></br>
         dimensions.
@@ -93,7 +93,7 @@ export default function HeroSection() {
         </button>
       </div>
       {/* Text Content */}
-      <p className={"text-base md:text-sm text-cyan-400 max-w-sm font-medium text-left sm:text-center md:text-left lg:text-left"+ttTravelsLight.variable}>
+      <p className={"text-base md:text-sm text-cyan-400 max-w-sm font-medium text-left sm:text-center md:text-left lg:text-left "+ ttTravelsLight.variable}>
         Brilliant but lazy scientist Rick takes his fretful teenage
         grandson, Morty, for wild escapades in other worlds and alternate
         dimensions.
