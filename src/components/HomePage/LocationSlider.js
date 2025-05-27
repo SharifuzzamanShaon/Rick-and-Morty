@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import HttpKit from "@/common/helper/fetchApi/fetchApi";
-import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
-
-const LocationSlider = () => {
+import { MdArrowBackIosNew, MdArrowForwardIos, MdStar } from "react-icons/md";
+import Image from "next/image";
+import { ttTravelsLight } from "@/common/helper/font/font";
+const   LocationSlider = () => {
   const [location, setLocation] = useState([]);
   const sliderRef = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +33,27 @@ const LocationSlider = () => {
 
   return (
     <div className="relative z-10 mt-10 max-w-full px-4 pb-6">
-      <h3 className="text-sm lg:text-md mb-4">Location</h3>
+      {/* star icon left top  */}
+      <div className="starIcon">
+        <Image
+          src="/images/sparkle.png"
+          alt="Star Icon"
+          width={24}
+          height={24}
+          className="cursor-pointer text-green-500"
+        />
+      </div>
+          {/* star icon right top  */}
+          <div className="starIconRight">
+        <Image
+          src="/images/sparkle.png"
+          alt="Star Icon"
+          width={22}
+          height={22}
+          className="cursor-pointer text-green-500"
+        />
+      </div>
+      <h3 className={"text-sm lg:text-md mb-4 " + ttTravelsLight.className}>Location</h3>
       <button
         onClick={() => scroll("left")}
         className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white hover:bg-white text-green-500 p-1.5 sm:p-2 rounded-full"
@@ -62,10 +83,10 @@ const LocationSlider = () => {
                 <div className="absolute inset-0 bg-[#424a5f] opacity-20 pointer-events-none custom-clip"></div>
 
                 <div className="relative z-10 py-2 pl-2">
-                  <p className="text-[10px] sm:text-xs rounded-[8px] text-gray-400 font-light p-1">
+                  <p className={"text-[10px] sm:text-xs rounded-[8px] text-gray-400 font-light p-1 " + ttTravelsLight.className}>
                     #{item.id}
                   </p>
-                  <h2 className="text-xs sm:text-sm rounded-[8px] font-light p-1">
+                  <h2 className={"text-xs sm:text-sm rounded-[8px] font-light p-1 " + ttTravelsLight.className}>
                     {item.name}
                   </h2>
                 </div>

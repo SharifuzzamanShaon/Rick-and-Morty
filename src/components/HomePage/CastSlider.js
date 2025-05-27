@@ -4,7 +4,7 @@ import HttpKit from "@/common/helper/fetchApi/fetchApi";
 import Image from "next/image";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { useRouter } from "next/navigation";
-
+import { ttTravelsLight } from "@/common/helper/font/font";
 const CastSlider = () => {
   const router = useRouter();
   const [cast, setCast] = useState([]);
@@ -57,10 +57,12 @@ const CastSlider = () => {
   return (
     <div className="relative mt-8 px-6 sm:mt-10">
       <div className="flex items-center mb-4">
-        <h3 className="text-sm lg:text-md mb-4">Meet The Cast</h3>
+      <h3 className={"text-sm lg:text-md mb-4 " + ttTravelsLight.className}>
+        Meet The Cast
+      </h3>
         <button
           onClick={() => router.push("/view-all-cast")}
-          className="ml-auto cursor-pointer border-[#9efe01] border-[.5px] px-3 py-1 rounded-md text-sm "
+          className={"ml-auto cursor-pointer border-[#9efe01] border-[.5px] px-3 py-1 rounded-md text-sm " + ttTravelsLight.className}
         >
           View All
         </button>
@@ -103,7 +105,7 @@ const CastSlider = () => {
                       alt={item.name}
                     />
                     <div className="pt-3 px-2 sm:px-4 text-left">
-                      <h2 className="text-sm sm:text-base lg:text-sm text-left rounded-[8px] px-1 py-0.5">
+                    <h2 className={"text-sm sm:text-base lg:text-sm text-left rounded-[8px] px-1 py-0.5 " + ttTravelsLight.className}>
                         {item.name}
                       </h2>
                     </div>
@@ -112,7 +114,16 @@ const CastSlider = () => {
               </div>
             ))}
           </div>
-
+          {/* star icon left top  */}
+          <div className="starIconCenter">
+            <Image
+              src="/images/sparkle.png"
+              alt="Star Icon"
+              width={12}
+              height={12}
+              className="cursor-pointer text-green-500"
+            />
+          </div>
           {showRightArrow && (
             <button
               onClick={() => scroll("right")}

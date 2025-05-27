@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import HttpKit from "@/common/helper/fetchApi/fetchApi";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
-
+import { ttTravelsLight } from "@/common/helper/font/font";
 const EpisodeSlider = () => {
   const [episode, setEpisode] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +27,7 @@ const EpisodeSlider = () => {
 
   return (
     <div className="relative z-10 mt-10 max-w-full px-4">
-      <h3 className="text-sm lg:text-md mb-4">Episode</h3>
+      <h3 className={"text-sm lg:text-md mb-4 " + ttTravelsLight.className}>Episode</h3>
       {isLoading ? (
         <div className="flex justify-center items-center h-40">
           <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
@@ -62,10 +62,10 @@ const EpisodeSlider = () => {
                   <div className="absolute inset-0 bg-[#424a5f] opacity-20 pointer-events-none custom-clip"></div>
 
                   <div className="relative z-10 pt-2 pl-2">
-                    <p className="text-[10px] sm:text-xs rounded-[8px] text-gray-400 font-light p-1">
+                    <p className={"text-[10px] sm:text-xs rounded-[8px] text-gray-400 font-light p-1 " + ttTravelsLight.className}>
                       {item.episode}
                     </p>
-                    <h2 className="text-xs sm:text-sm rounded-[8px] font-light p-1">
+                    <h2 className={"text-xs sm:text-sm rounded-[8px] font-light p-1 " + ttTravelsLight.className}>
                       {item.name}
                     </h2>
                   </div>

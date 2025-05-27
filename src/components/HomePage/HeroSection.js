@@ -1,9 +1,8 @@
 'use client';
-
 import Image from 'next/image';
 import { MdOutlinePlayCircleOutline } from 'react-icons/md';
 import { useRouter } from 'next/navigation';
-
+import { ttTravelsBlack, ttTravelsLight, ttTravelsRegular, ttTravelsThin } from '@/common/helper/font/font';
 export default function HeroSection() {
   const router = useRouter();
   return (
@@ -22,8 +21,8 @@ export default function HeroSection() {
     <Image
       src="/images/bubble.png"
       alt="Bubble"
-      width={96}
-      height={96}
+      width={150}
+      height={150}
       className="bubble-image"
     />
     <Image
@@ -43,16 +42,16 @@ export default function HeroSection() {
     />
 
     <div className="my-8 px-4 sm:px-8">
-      <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-left sm:text-center md:text-left lg:text-left leading-snug sm:leading-tight drop-shadow-2xl tracking-wider sm:tracking-widest uppercase">
-        <span className="italic text-white mr-4 sm:mr-10 font-extrabold">
+      <h2 className={"text-4xl sm:text-5xl md:text-7xl  text-left sm:text-center md:text-left lg:text-left leading-snug sm:leading-tight drop-shadow-2xl tracking-wider sm:tracking-widest uppercase" + ttTravelsBlack.className}>
+        <span className={"italic text-white mr-10 sm:mr-10 " + ttTravelsBlack.className}>
           THE
         </span>
-        <span className="text-cyan-400 ml-2 sm:ml-10 font-extrabold">
+        <span className={"text-cyan-400 ml-16 sm:ml-10 " + ttTravelsBlack.className}>
           RICK &
         </span>
         <br />
-        <span className="text-green-400 font-extrabold">MORTY</span>{" "}
-        <span className="italic text-white font-extrabold">WIKI</span>
+        <span className={"text-green-400 " + ttTravelsBlack.className}>MORTY</span>{" "}
+        <span className={"italic text-white " + ttTravelsBlack.className}>WIKI</span>
       </h2>
     </div>
     <div className="accent-background"></div>
@@ -60,9 +59,9 @@ export default function HeroSection() {
     {/* Mobile Layout */}
     <div className="flex flex-col gap-4 mt-4 px-4  text-left sm:hidden mb-16">
       {/* Text Content */}
-      <p className="text-xs text-cyan-400 max-w-md font-medium text-left">
-        Brilliant but lazy scientist Rick takes his fretful teenage
-        grandson, Morty, for wild escapades in other worlds and alternate
+      <p className={"text-xs text-cyan max-w-md  text-left text-[12px]"+ ttTravelsLight.className}>
+        Brilliant but lazy scientist Rick takes his fretful teenage <br></br>
+        grandson, Morty, for wild escapades in other worlds and alternate <br></br>
         dimensions.
       </p>
 
@@ -84,17 +83,17 @@ export default function HeroSection() {
       {/* Button */}
       <div>
         <button
-          className="text-white opacity-80 px-3 py-2 rounded-full flex items-center cursor-pointer gap-2 hover:opacity-90 transition-all duration-200"
+          className={"text-white opacity-70 px-3 py-2 rounded-full flex items-center cursor-pointer gap-2 hover:opacity-90 transition-all duration-200 text-[8px]" + ttTravelsRegular.variable}
           style={{
             backgroundImage:
               "linear-gradient(to right, #82f630, rgb(28, 219, 215))",
           }}
         >
-          <MdOutlinePlayCircleOutline className="text-md" /> Watch Now
+          <MdOutlinePlayCircleOutline className={"text-md "+ ttTravelsRegular.variable}/> Watch Now
         </button>
       </div>
       {/* Text Content */}
-      <p className="text-base md:text-sm text-cyan-400 max-w-sm font-medium text-left sm:text-center md:text-left lg:text-left">
+      <p className={"text-base md:text-sm text-cyan-400 max-w-sm font-medium text-left sm:text-center md:text-left lg:text-left"+ttTravelsLight.variable}>
         Brilliant but lazy scientist Rick takes his fretful teenage
         grandson, Morty, for wild escapades in other worlds and alternate
         dimensions.
