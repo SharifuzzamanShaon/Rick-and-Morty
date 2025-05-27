@@ -76,7 +76,7 @@ const   LocationSlider = () => {
         {location?.map((item, index) => (
               <div
               key={index}
-              className="relative rounded-[8px] snap-start flex-shrink-0 w-[180px] sm:w-[200px] md:w-[220px] lg:w-[240px] p-[.4px] bg-gradient-to-t from-[#7ff633] to-[#1cdbda] custom-clip"
+              className="relative rounded-[8px] snap-start flex-shrink-0 w-[180px] sm:w-[200px] md:w-[220px] lg:w-[240px] p-[.4px] bg-gradient-to-t cursor-pointer from-[#7ff633] to-[#1cdbda] custom-clip"
             >
               <div className="bg-[#384053] rounded-[8px] text-white w-full h-full p-1 custom-clip relative overflow-hidden">
                 {/* Optional background overlay */}
