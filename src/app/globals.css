@@ -30,6 +30,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .custom-clip {
@@ -72,12 +73,12 @@ body {
   position: absolute;
   width: 300px;
   height: 300px;
-  background-color: #22c55e; /* Tailwind's green-400 */
+  background-color: #22c55e;
   opacity: 0.2;
   border-radius: 9999px;
-  filter: blur(64px); /* blur-3xl */
+  filter: blur(35px);
   top: 10%;
-  left: 28%;
+  left: 14%;
   transform: rotate(12deg);
 }
 /* Green blur top-right*/
@@ -93,6 +94,20 @@ body {
   top: 9%;
   right: 23%;
   transform: rotate(12deg);
+}
+.accent-background-1::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #22c55e; /* Tailwind's green-400 */
+  opacity: 0.2;
+  border-radius: 9999px;
+  filter: blur(64px); /* blur-3xl */
+  top: 12%;
+  left: 30%;
+  transform: rotate(12deg);
+
 }
 /* Cyan blur bottom-right */
 .accent-background-2::after {
