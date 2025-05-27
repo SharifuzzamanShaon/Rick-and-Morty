@@ -44,13 +44,13 @@ body {
 .bubble-image {
   position: absolute;
   top: 18%;
-  left: 22%;
+  left: 19%;
 }
 
 .portal-image {
   position: absolute;
   top: 37%;
-  left: 45%;
+  left: 43%;
   transform: translateX(-50%);
 }
 
