@@ -55,10 +55,9 @@ const EpisodeSlider = () => {
             {episode.map((item, index) => (
               <div
                 key={index}
-                className="relative rounded-[8px] snap-start flex-shrink-0 w-[180px] sm:w-[200px] md:w-[220px] lg:w-[240px] p-[.3px] bg-gradient-to-t from-[#7ff633] to-[#1cdbda] custom-clip"
+                className="relative rounded-[8px] snap-start flex-shrink-0 w-[180px] sm:w-[200px] md:w-[220px] lg:w-[240px] p-[.3px] cursor-pointer bg-gradient-to-t from-[#7ff633] to-[#1cdbda] custom-clip"
               >
                 <div className="bg-[#424a5f] rounded-[8px] text-white w-full h-full p-1 custom-clip relative overflow-hidden">
-                  {/* Optional background overlay */}
                   <div className="absolute inset-0 bg-[#424a5f] opacity-20 pointer-events-none custom-clip"></div>
 
                   <div className="relative z-10 pt-2 pl-2">
