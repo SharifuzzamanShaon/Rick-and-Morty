@@ -4,16 +4,20 @@ import {
   FaHeart,
   FaMars,
   FaRobot,
-  FaGlobe,
   FaMapMarkerAlt,
   FaListUl,
 } from "react-icons/fa";
 import { FaEarthAmericas } from "react-icons/fa6";
-
 import { FiExternalLink } from "react-icons/fi";
 import HttpKit from "@/common/helper/fetchApi/fetchApi";
 import { use, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  ttTravelsBlack,
+  ttTravelsBlackItalic,
+  ttTravelsBold,
+  ttTravelsLight,
+} from "@/common/helper/font/font";
 export default function RickSanchezCard({ params }) {
   const router = useRouter();
   const { id } = use(params);
@@ -44,13 +48,19 @@ export default function RickSanchezCard({ params }) {
         </header>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] gap-8 items-start mt-10">
           {/* Left Section */}
-          <div className="flex flex-col items-center self-center">
-            <h2 className="text-2xl font-semibold text-[#16d9e5] mb-4">
+          <div className="flex flex-col items-center self-center relative">
+            <h2 className={"absolute background-shadow-text " + ttTravelsBold.className}>{cast.name}</h2>
+            <h2
+              className={
+                "text-2xl lg:text-3xl  text-[#16d9e5] mb-4 z-10 " +
+                ttTravelsBold.className
+              }
+            >
               {cast.name}
             </h2>
-            <div className="p-[.5px] rounded-[8px] bg-gradient-to-t from-[#81f72d] to-[#1fdcd2]">
+            <div className="p-[.5px] rounded-[8px] bg-gradient-to-t from-[#81f72d] to-[#1fdcd2] z-10">
               <div className="rounded-[8px] bg-[#313745] p-6">
-                {/* inital spinner */}
+                {/* Initial Spinner */}
                 {cast.image ? (
                   <Image
                     src={cast.image}
@@ -67,7 +77,6 @@ export default function RickSanchezCard({ params }) {
               </div>
             </div>
           </div>
-
           {/* Vertical Divider */}
           <div className="vertical-divider" />
           {/* Right Section */}
@@ -105,13 +114,22 @@ export default function RickSanchezCard({ params }) {
               <div className="bg-[#313745] p-4 rounded-[8px]">
                 <div className="flex flex-col items-start gap-2 mb-4">
                   <FaListUl className="text-[#06df73] text-xl" />
-                  <h3 className="text-md font-medium">Episode(s)</h3>
+                  <h3
+                    className={
+                      "text-md font-medium " + ttTravelsLight.className
+                    }
+                  >
+                    Episode(s)
+                  </h3>
                 </div>
                 <ul className="list-disc list-inside space-y-1 text-sm overflow-y-auto max-h-40 pr-2">
                   {cast?.episode?.map((episode, index) => (
                     <li
                       key={index}
-                      className="text-white-400 text-md lg:text-xl"
+                      className={
+                        "text-white text-md lg:text-xl " +
+                        ttTravelsBold.className
+                      }
                     >
                       {episode.name}
                     </li>
@@ -131,8 +149,20 @@ function InfoBox({ icon, label, value }) {
     <div className="bg-gradient-to-t from-[#81f72d] to-[#1fdcd2] p-[.5px] rounded-[8px] justify-start">
       <div className="bg-[#313745] p-4 rounded-[8px] text-start space-y-1 ">
         <div className="flex justify-start text-2xl lg:text-3xl">{icon}</div>
-        <h3 className="text-sm lg:text-lg  text-[#06df73]">{label}</h3>
-        <p className="text-sm lg:text-lg font-medium">{value}</p>
+        <h3
+          className={
+            "text-sm lg:text-md  text-white " + ttTravelsLight.className
+          }
+        >
+          {label}
+        </h3>
+        <p
+          className={
+            "text-sm lg:text-xl font-medium " + ttTravelsBold.className
+          }
+        >
+          {value}
+        </p>
       </div>
     </div>
   );
@@ -145,11 +175,21 @@ function DataCard({ icon, label, value }) {
         <div className="flex justify-between items-center">
           <div>
             {icon}
-            <h3 className="text-md text-[#06df73] mt-2">{label}</h3>
+            <h3
+              className={"text-md text-white mt-2 " + ttTravelsLight.className}
+            >
+              {label}
+            </h3>
           </div>
           <FiExternalLink className="text-white text-xl" />
         </div>
-        <p className="text-md lg:text-lg font-medium mt-2">{value}</p>
+        <p
+          className={
+            "text-md lg:text-lg font-medium mt-2 " + ttTravelsBold.className
+          }
+        >
+          {value}
+        </p>
       </div>
     </div>
   );
