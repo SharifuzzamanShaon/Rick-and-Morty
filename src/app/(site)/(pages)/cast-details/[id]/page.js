@@ -77,6 +77,26 @@ export default function RickSanchezCard({ params }) {
               </div>
             </div>
           </div>
+          {/* star icon left bottom  */}
+                <div className="starIconDetailsPage">
+                  <Image
+                    src="/images/sparkle.png"
+                    alt="Star Icon"
+                    width={24}
+                    height={24}
+                    className="cursor-pointer text-green-500"
+                  />
+                </div>
+                {/* star icon right bottom  */}
+                <div className="starIconDetailsPageRight">
+                  <Image
+                    src="/images/sparkle.png"
+                    alt="Star Icon"
+                    width={24}
+                    height={24}
+                    className="cursor-pointer text-green-500"
+                  />
+                </div>
           {/* Vertical Divider */}
           <div className="vertical-divider" />
           {/* Right Section */}
@@ -122,7 +142,7 @@ export default function RickSanchezCard({ params }) {
                     Episode(s)
                   </h3>
                 </div>
-                <ul className="list-disc list-inside space-y-1 text-sm overflow-y-auto max-h-40 pr-2">
+                <ul className="list-disc list-inside space-y-1 text-sm overflow-y-auto max-h-40 pr-2 green-scrollbar">
                   {cast?.episode?.map((episode, index) => (
                     <li
                       key={index}
@@ -140,6 +160,8 @@ export default function RickSanchezCard({ params }) {
           </div>
         </div>
       </div>
+      <div className="lighting-glow"></div>
+
     </div>
   );
 }
