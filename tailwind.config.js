@@ -9,14 +9,6 @@ module.exports = {
     extend: {
       fontFamily: {
         ttblack: ["var(--font-tttravels-black)"],
-        ttregular: ["var(--font-tttravels-regular)"],
-        ttbold: ["var(--font-tttravels-bold)"],
-        ttmedium: ["var(--font-tttravels-medium)"],
-        ttlight: ["var(--font-tttravels-light)"],
-        ttextrabold: ["var(--font-tttravels-extrabold)"],
-        ttsemibold: ["var(--font-tttravels-semibold)"],
-        ttthin: ["var(--font-tttravels-thin)"],
-        ttextralight: ["var(--font-tttravels-extralight)"],
 
       },
     },
