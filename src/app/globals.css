@@ -43,8 +43,8 @@ body {
 
 .bubble-image {
   position: absolute;
-  top: 25%;
-  left: 24%;
+  top: 18%;
+  left: 22%;
 }
 
 .portal-image {
@@ -156,6 +156,39 @@ body {
   pointer-events: none;
   z-index: 0;
 }
+.starIcon {
+  position: absolute;
+  top: -18%;
+  left: 1%;
+  rotate: 10deg;
+}
+.starIconRight {
+  position: absolute;
+  top: -24%;
+  right: -2%;
+  rotate: -10deg;
+}
+.starIconCenter {
+  position: absolute;
+  bottom: -14%;
+  left: 57%;
+  rotate: -10deg;
+}
+
+.background-shadow-text {
+  position: absolute;
+  top: 31%;
+  left: -34%;
+  font-size: 75px;
+  font-weight: 600;
+  color: #27bc5e;
+  opacity: 0.05;
+  user-select: none;
+  z-index: 0;
+  transform: rotate(270deg);
+  pointer-events: none;
+}
+
 .vertical-divider {
    height: 35%; /* or your desired height */
     width: 0.6px;
