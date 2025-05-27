@@ -4,9 +4,7 @@ A sleek and responsive **Next.js** frontend project that fetches data from the [
 
 ## 🚀 Live Preview
 
-Coming soon...
-
-## 📸 Demo Preview
+(https://rick-and-morty-eight-liart.vercel.app/)
 
 ## ✨ Features
 
