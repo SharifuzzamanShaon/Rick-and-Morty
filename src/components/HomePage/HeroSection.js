@@ -6,7 +6,7 @@ import { ttTravelsBlack, ttTravelsLight, ttTravelsRegular, ttTravelsThin } from 
 export default function HeroSection() {
   const router = useRouter();
   return (
-    <section className="w-full lg:h-[400px] h-[300px] pt-8 text-white flex flex-col items-center justify-center relative">
+    <section className="w-full lg:h-[400px] h-[300px] pt-8 text-white flex flex-col items-center justify-center relative sm:mb-8">
     <header className="lg:min-h-[60px]  flex flex-col items-center lg:mt-10 mt-10 sm:mt-10">
       <Image
         src="/images/Logo.png"
@@ -42,7 +42,7 @@ export default function HeroSection() {
     />
 
     <div className="my-8 sm:mb-4 px-4 sm:px-8">
-      <h2 className={"text-4xl sm:text-2xl md:text-7xl  text-left sm:text-center lg:text-left leading-snug drop-shadow-2xl tracking-wider sm:tracking-widest uppercase" + ttTravelsBlack.className}>
+      <h2 className={"text-4xl sm:text-xl md:text-7xl  text-left sm:text-center lg:text-left leading-snug drop-shadow-2xl tracking-wider sm:tracking-widest uppercase" + ttTravelsBlack.className}>
         <span className={"italic text-white lg:mr-16 sm:mr-5 " + ttTravelsBlack.className}>
           THE
         </span>
@@ -50,14 +50,15 @@ export default function HeroSection() {
           RICK &
         </span>
         <br />
-        <span className={"text-green-400 " + ttTravelsBlack.className}>MORTY</span>{" "}
+        <span className={"text-green-400  " + ttTravelsBlack.className}>MORTY</span>
         <span className={"italic text-white " + ttTravelsBlack.className}>WIKI</span>
       </h2>
     </div>
     <div className="accent-background"></div>
+    <div className="accent-background-1"></div>
     <div className="accent-background-2"></div>
     {/* Mobile Layout */}
-    <div className="flex flex-col gap-4 mt-4 px-4  text-left sm:hidden mb-16">
+    <div className="flex flex-col gap-4 mt-4 px-4  text-left sm:hidden ">
       {/* Text Content */}
       <p className={" text-cyan-400 max-w-md font-light text-left text-[8px] "+ ttTravelsLight.className}>
         Brilliant but lazy scientist Rick takes his fretful teenage <br></br>
