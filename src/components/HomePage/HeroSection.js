@@ -40,7 +40,9 @@ export default function HeroSection() {
       height={150}
       className="portal-gun-image"
     />
+  <div className="boltLine">
 
+  </div>
     <div className="my-8 sm:mb-4 px-4 sm:px-8">
       <h2 className={"text-4xl sm:text-xl md:text-7xl  text-left sm:text-center lg:text-left leading-snug drop-shadow-2xl tracking-wider sm:tracking-widest uppercase" + ttTravelsBlack.className}>
         <span className={"italic text-white lg:mr-16 sm:mr-5 " + ttTravelsBlack.className}>
