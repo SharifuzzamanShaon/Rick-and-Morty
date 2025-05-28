@@ -16,7 +16,7 @@ const ViewAllCast = () => {
   }, []);
   return (
     <div className="relative min-h-screen text-white px-4 py-10">
-      <div className="absolute inset-0 bg-[url('/images/bg-for-view-all-cast.png')] opacity-3 no-repeat bg-cover bg-center brightness-110 z-0" />
+      <div className="absolute inset-0 bg-[url('/images/bg-for-view-all-cast.png')] opacity-4 bg-no-repeat bg-cover bg-center brightness-110 z-[-1]" />
       <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/20 z-0" />
       <div className="relative z-10">
         <header className="flex flex-col items-center mb-10">
